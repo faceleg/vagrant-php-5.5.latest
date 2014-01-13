@@ -20,7 +20,7 @@ Vagrant::configure("2") do |config|
   config.vm.network :private_network,
     ip: "192.168.55.55"
 
-  config.vm.hostname = "www.bpb-vagrant-php-54.dev"
+  config.vm.hostname = "www.bpb-vagrant-php-55.dev"
 
   load File.expand_path("../user/vhosts.pp", __FILE__)
   config.hostsupdater.aliases = $vhosts.keys
@@ -31,7 +31,7 @@ Vagrant::configure("2") do |config|
     vb.customize [
       "modifyvm", :id,
       "--memory", "1024",
-      "--name", "bpb-php-53",
+      "--name", "bpb-php-55",
       "--natdnshostresolver1", "on"
     ]
   end
