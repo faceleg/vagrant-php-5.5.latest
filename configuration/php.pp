@@ -13,15 +13,8 @@ class php54 {
     require => [File["/etc/apt/sources.list"], Exec["import-gpg"]],
   }
 
-  /* package { [ */
-  /*   "php5" */
-  /* ] : */
-  /*   ensure => latest, */
-  /*   require => Exec["/usr/bin/apt-get update"] */
-  /* } */
 }
 class { "php":
-  /* version => "5.3.3-7+squeeze17", */
   source_dir => '/configuration/php/',
   source_dir_purge => false, # Set to true to purge any existing file not present in $source_dir
 }
