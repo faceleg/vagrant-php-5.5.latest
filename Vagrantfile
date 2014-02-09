@@ -19,6 +19,11 @@ Vagrant::configure("2") do |config|
 
   config.vm.network :private_network,
     ip: "192.168.55.55"
+  config.vm.network :forwarded_port,
+    guest: 22,
+    host: 2255,
+    id: "ssh",
+    auto_correct: true
 
   config.vm.hostname = "www.bpb-vagrant-php-55.dev"
 
