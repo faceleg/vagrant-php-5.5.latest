@@ -1,9 +1,9 @@
 #!/bin/sh
-
 PUPPET_DIR='/vagrant/puppet'
 
 GIT=/usr/bin/git
 APT_GET=/usr/bin/apt-get
+
 $APT_GET update --fix-missing
 $APT_GET upgrade -y --fix-missing
 $APT_GET -q -y install git puppet ruby-dev
