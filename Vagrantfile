@@ -41,6 +41,9 @@ Vagrant::configure("2") do |config|
     ]
   end
 
+  config.vm.provision :shell, :path => "shell/install-rvm.sh",  :args => "stable"
+  config.vm.provision :shell, :path => "shell/install-ruby.sh", :args => "1.9.3"
+
   # Prepare facts
   $facts = "export FACTER_vagrant_apache_vhosts=\""
   $vhosts.each do |name, directory|
