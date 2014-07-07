@@ -15,5 +15,7 @@ else
   cd $PUPPET_DIR && librarian-puppet update
 fi
 
+librarian-puppet config tmp /tmp --global
+
 sudo -E puppet apply -vv --modulepath=$PUPPET_DIR/modules/ $PUPPET_DIR/manifests/main.pp
 
