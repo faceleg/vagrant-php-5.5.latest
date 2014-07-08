@@ -1,12 +1,12 @@
 #!/bin/sh
-PUPPET_DIR='/vagrant/puppet'
+export DEBIAN_FRONTEND=noninteractive
 
 APT_GET=/usr/bin/apt-get
 
-$APT_GET update --fix-missing
-$APT_GET upgrade -y --fix-missing
-$APT_GET -q -y install git puppet ruby-dev
+$APT_GET update
+$APT_GET -q -y install git puppet
 
+PUPPET_DIR='/vagrant/puppet'
 if [ `gem query --local | grep librarian-puppet | wc -l` -eq 0 ]; then
   gem install librarian-puppet
   cd $PUPPET_DIR && librarian-puppet install --clean
@@ -15,5 +15,5 @@ else
   cd $PUPPET_DIR && librarian-puppet update
 fi
 
-sudo -E puppet apply -vv --modulepath=$PUPPET_DIR/modules/ $PUPPET_DIR/manifests/main.pp
+sudo -E puppet apply -vv --modulepath=$PUPPET_DIR/modules/ $PUPPET_DIR/manifests/
 
