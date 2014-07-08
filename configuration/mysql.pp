@@ -21,6 +21,6 @@ define create_database {
 
 if $dbs {
   $dbs_array = split($dbs, ' ')
-  create_database{ $dbs_array: }
+  create_database { $dbs_array: }
 }
 
