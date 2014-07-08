@@ -10,8 +10,8 @@
 # vagrant plugin install vagrant-hostsupdater
 
 Vagrant::configure("2") do |config|
-  config.vm.box = "Puppetlabs Debian 7.3 x86_64, VBox 4.3.6, No Puppet or Chef"
-  config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/debian-73-x64-virtualbox-nocm.box  "
+  config.vm.box = "Official Ubuntu 12.04 daily Cloud Image amd64 (VirtualBox 4.1.12)"
+  config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210-nocm.box"
 
   load File.expand_path("./user/directories.pp")
   config.vm.synced_folder $projects, "/srv/www/", :nfs => true
