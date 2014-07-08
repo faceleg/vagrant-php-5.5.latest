@@ -6,7 +6,6 @@ export DEBIAN_FRONTEND=noninteractive
 
 APT_GET=/usr/bin/apt-get
 
-$APT_GET update
 $APT_GET install -q -y ruby1.9.1 ruby1.9.1-dev \
   rubygems1.9.1 irb1.9.1 ri1.9.1 rdoc1.9.1 \
   build-essential libopenssl-ruby1.9.1 libssl-dev zlib1g-dev
@@ -21,5 +20,7 @@ sudo update-alternatives --install /usr/bin/ruby ruby /usr/bin/ruby1.9.1 400 \
 sudo update-alternatives --set ruby /usr/bin/ruby1.9.1
 sudo update-alternatives --set gem /usr/bin/gem1.9.1
 
-sudo gem install puppet
+if [ `gem query --local | grep puppet | wc -l` -eq 0 ]; then
+  sudo gem install puppet
+fi
 
