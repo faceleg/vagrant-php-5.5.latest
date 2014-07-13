@@ -42,7 +42,6 @@ Vagrant::configure("2") do |config|
   end
 
   config.vm.provision :shell, :path => "shell/update-apt.sh"
-  # config.vm.provision :shell, :path => "shell/install-ruby.sh"
 
   # Prepare facts
   $facts = "export FACTER_vagrant_apache_vhosts=\""
