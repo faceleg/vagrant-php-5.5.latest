@@ -9,3 +9,5 @@ mod "puppetlabs/mysql"
 mod "puppetlabs/apache"
 mod "php",
   :git => "https://github.com/example42/puppet-php"
+mod "puppi",
+  :git => "https://github.com/example42/puppi"
