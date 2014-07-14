@@ -1,4 +1,4 @@
-# Configuration for librarian-puppet. For example:
+# Configuration for r10k. For example:
 #
 forge "https://forgeapi.puppetlabs.com"
 
