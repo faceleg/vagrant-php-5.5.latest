@@ -7,5 +7,5 @@ mod "puppetlabs/stdlib"
 mod "puppetlabs/apt"
 mod "puppetlabs/mysql"
 mod "puppetlabs/apache"
-mod "example42/php",
+mod "php",
   :git => "https://github.com/example42/puppet-php"
