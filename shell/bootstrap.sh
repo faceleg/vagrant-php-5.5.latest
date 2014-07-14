@@ -2,16 +2,15 @@
 export DEBIAN_FRONTEND=noninteractive
 
 APT_GET=/usr/bin/apt-get
-$APT_GET -q -y install git puppet librarian-puppet
+$APT_GET -q -y install git puppet ruby
 
-PUPPET_DIR='/vagrant/puppet'
-if [ `gem query --local | grep librarian-puppet | wc -l` -eq 0 ]; then
-  cd $PUPPET_DIR && librarian-puppet install --clean
-else
-  cd $PUPPET_DIR && librarian-puppet update
+if [ `gem query --local | grep r10k | wc -l` -eq 0 ]; then
+  sudo gem install r10k
 fi
 
-librarian-puppet config tmp /tmp --global
+PUPPET_DIR='/vagrant/puppet'
 
+cd $PUPPET_DIR
+r10k puppetfile install
 sudo -E puppet apply -vv --modulepath=$PUPPET_DIR/modules/ $PUPPET_DIR/manifests/main.pp
 
