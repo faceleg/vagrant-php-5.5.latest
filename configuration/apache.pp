@@ -9,6 +9,7 @@ include apache
 apache::mod { 'rewrite': }
 apache::mod { 'headers': }
 apache::mod { 'expires': }
+apache::mod { 'authn_core': }
 
 file { "/srv/log":
     ensure => "directory",
