@@ -11,6 +11,6 @@ fi
 PUPPET_DIR='/vagrant/puppet'
 
 cd $PUPPET_DIR
-r10k puppetfile install
+sudo r10k puppetfile install
 sudo -E puppet apply -vv --modulepath=$PUPPET_DIR/modules/ $PUPPET_DIR/manifests/main.pp
 
