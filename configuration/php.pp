@@ -13,6 +13,7 @@ php::module { "mysql": }
 php::module { "mcrypt": }
 php::module { "gd": }
 php::module { "curl": }
+php::module { "sqlite": }
 
 php::pecl::module { 'xdebug':
   use_package => "no",
