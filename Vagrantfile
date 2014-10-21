@@ -14,8 +14,8 @@ Vagrant::configure("2") do |config|
   config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
 
   load File.expand_path("./user/directories.pp")
-  config.vm.synced_folder $projects, "/srv/www/" #, :nfs => true
-  config.vm.synced_folder "./configuration/", "/configuration/" #, :nfs => true
+  config.vm.synced_folder $projects, "/srv/www/", :nfs => true
+  config.vm.synced_folder "./configuration/", "/configuration/", :nfs => true
 
   config.vm.network :private_network,
     ip: "192.168.55.55"
